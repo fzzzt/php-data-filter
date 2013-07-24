@@ -12,6 +12,8 @@ class Record_Controller extends BaseController {
 				break;
 			case 'run':
 				while (($record = $this->source->get_record()) != NULL) {
+					echo("Record:");
+					echo($record);
 					foreach ($this->filters as $filter) {
 						$filter->process($record);
 					}
